@@ -9,3 +9,4 @@ this repo is under development
 - [ ] feature: select from/to encodings
 - [ ] Authenticate users
 - [ ] prettier UI / create-react-app
+- [ ] handle multer errors (file too large) to avoid internal server error
