@@ -1,5 +1,9 @@
 import { default as parsePath } from 'parse-filepath';
 import { default as includes } from 'lodash/fp/includes';
+import { default as negate } from 'lodash/fp/negate';
+import { default as isEmpty } from 'lodash/fp/isEmpty';
+
+const isNotEmpty = negate(isEmpty);
 
 const subsExtensions = [
   ".txt",
@@ -29,4 +33,6 @@ export const allowSubsOnly = ( req, file, cb ) => {
   let isSubExt    = isSubtitle( ext );
 
   cb( null, isSubExt );
-}
+};
+
+export const isSingular = payload => isNotEmpty( payload ) && payload.length < 2
